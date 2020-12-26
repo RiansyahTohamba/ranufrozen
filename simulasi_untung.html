@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simulasi</title>
+</head>
+<body>
+	<table border="1">
+
+		<tr><th>nama</th><th>harga</th> </tr>
+		<tr><td>freezer</td> <td id="">10.000</td></tr>
+		<tr><td>ongkir</td> <td id="">10.000</td></tr>
+	</table>
+</body>
+</html>
+<script type="text/javascript">
+	var mainCont = document.createDocumentFragment();		
+	function ongkirKeKdi() {
+		return 0;
+	}
+	function formatRupiah(angka, prefix) {
+	    var number_string = angka.replace(/[^,\d]/g, "").toString(),
+		    split = number_string.split(","),
+		    sisa = split[0].length % 3,
+		    rupiah = split[0].substr(0, sisa),
+		    ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+		  // tambahkan titik jika yang di input sudah menjadi angka ribuan
+		  if (ribuan) {
+		    separator = sisa ? "." : "";
+		    rupiah += separator + ribuan.join(".");
+		  }
+		  rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
+		  return prefix == undefined ? rupiah : rupiah ? "Rp. " + rupiah : "";
+	}
+	// 1-5 pax 
+	// 87.500/30pcs 
+	// 30pcs itu berapa kilo?
+	// ongkir
+
+
+	var satuKilo = 48410;
+	var strSatuKilo = formatRupiah(satuKilo+'', "Rp. ");
+	var strSepuluhKilo = formatRupiah((satuKilo*10)+'', "Rp. ");
+	// 48.410 per 1 kg minimal 10 kg
+    var sepKilo = document.createElement('p');
+	sepKilo.innerHTML = strSatuKilo + '/1 kg, minimal pengiriman 10 kg <br> jadi harga 10 kg  '+strSepuluhKilo;
+	mainCont.appendChild(sepKilo)
+	// 10 kg
+
+	var ongkirGojek = 0;
+
+	total = sepKilo + ongkirKeKdi();
+
+    var ptotal = document.createElement('p');    
+
+	ptotal.innerHTML = 'Biaya sampai ke gudang ';
+
+	var headers = ['nama','harga'];
+	
+	document.write("<table border='1'>");
+	numbers.forEach(headers);
+	document.getElementById("demo").innerHTML = txt;
+
+	function myFunction(value, index, array) {
+	  txt = txt + value + "<br>"; 
+	}
+
+	headers.forEach(function(obj) { 
+	for (var a=0; a < 2; a++) {
+        document.write("<tr>");
+        for(var b=0; b<10; b++) {
+                document.write("<td>"+(a*b)+"</td>");
+        }
+        document.write("</tr>");
+    }
+	document.write("</table>");
+    document.body.appendChild(mainCont);
+</script>
