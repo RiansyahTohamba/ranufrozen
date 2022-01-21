@@ -33,7 +33,7 @@ products.forEach(function(pro){
     
     if (pro.stock == 0) {
         let urlWa = "https://wa.me/6281295957942?text=Saya ingin pre-order untuk "+pro.name+" Mba.";
-        let btnOrder = $("<a>", {"href": urlWa,"class":"btn btn-alert"}).text('Pre-Order');
+        let btnOrder = $("<a>", {"href": urlWa,"class":"btn btn-danger"}).text('Pre-Order');
     } 
 
     $("#products").append(item);
