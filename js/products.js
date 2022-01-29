@@ -28,12 +28,13 @@ products.forEach(function(pro){
     let foodImg = $("<img>", {"src": "img/"+pro.photoPath});
     let foodPrice = $("<div>", {"class": "price"}).append(pro.price);
     let textContent = $("<div>", {"class": "text-content"});
-    let urlWa = "https://wa.me/6281295957942?text=Stock "+pro.name+" nya ready Mba?";
-    let btnOrder = $("<a>", {"href": urlWa,"class":"btn btn-primary"}).text('Beli');
+    
+    var urlWa = "https://wa.me/6281295957942?text=Stock "+pro.name+" nya ready Mba?";
+    var btnOrder = $("<a>", {"href": urlWa,"class":"btn btn-primary"}).text('Beli');
     
     if (pro.stock == 0) {
-        let urlWa = "https://wa.me/6281295957942?text=Saya ingin pre-order untuk "+pro.name+" Mba.";
-        let btnOrder = $("<a>", {"href": urlWa,"class":"btn btn-danger"}).text('Pre-Order');
+        var urlWa = "https://wa.me/6281295957942?text=Saya ingin pre-order untuk "+pro.name+" Mba.";
+        var btnOrder = $("<a>", {"href": urlWa,"class":"btn btn-danger"}).text('Pre-Order');
     } 
 
     $("#products").append(item);
