@@ -9,76 +9,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-    <script>
-        $(function () {
-
-            // Header Master Checkbox Event
-            $("#masterCheck").on("click", function () {
-                if ($("input:checkbox").prop("checked")) {
-                    $("input:checkbox[name='row-check']").prop("checked", true);
-                } else {
-                    $("input:checkbox[name='row-check']").prop("checked", false);
-                }
-            });
-
-            // Check event on each table row checkbox
-            $("input:checkbox[name='row-check']").on("change", function () {
-                var total_check_boxes = $("input:checkbox[name='row-check']").length;
-                var total_checked_boxes = $("input:checkbox[name='row-check']:checked").length;
-
-                // If all checked manually then check master checkbox
-                if (total_check_boxes === total_checked_boxes) {
-                    $("#masterCheck").prop("checked", true);
-                }
-                else {
-                    $("#masterCheck").prop("checked", false);
-                }
-            });
-        });
-    </script>
 </head>
 
 <body class="container">
 
-    <h4>Multiple Check/ Uncheck</h4>
+    <h2>Dashboard</h2>
 
-    <table class="table">
+    <table id="item-table" class="table">
         <thead>
             <tr>
                 <th scope="col">
                     <input class="form-check-input" type="checkbox" id="masterCheck" value="checkUncheckAll">
-                    <label class="form-check-label" for="masterCheck">Select/ Deselect All</label>
+                    <label class="form-check-label" for="masterCheck">Name</label>
                 </th>
-                <th scope="col">Address</th>
+                <th scope="col">Price</th>
+                <th scope="col">Stock</th>
             </tr>
         </thead>
-        <tbody>
-            <!-- harus buat loop disini -->
-            <tr>
-                <td>
-                    <input class="form-check-input" type="checkbox" id="row1" name="row-check" value="Lavina Cassin">
-                    <label class="form-check-label" for="row1">Lavina Cassin</label>
-                </td>
-                <td>1659 Melyssa Cove</td>
-            </tr>
-            <tr>
-                <td>
-                    <input class="form-check-input" type="checkbox" id="row2" name="row-check"
-                        value="Herminio Schimmel">
-                    <label class="form-check-label" for="row2">Herminio Schimmel</label>
-                </td>
-                <td>9562 Fleta Dam</td>
-            </tr>
-            <tr>
-                <td>
-                    <input class="form-check-input" type="checkbox" id="row3" name="row-check" value="Anika Little">
-                    <label class="form-check-label" for="row3">Anika Little</label>
-                </td>
-                <td>49964 Halvorson Hollow</td>
-            </tr>
-        </tbody>
+        <tbody></tbody>
     </table>
 
+    <script src="js/dashboard.js"></script>
 
 </body>
 
