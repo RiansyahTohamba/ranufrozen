@@ -5,12 +5,13 @@ function checkAll(myCheckbox){
         checkboxes.forEach(function(checkbox){
             checkbox.checked = true;
         });
-    }
-    else{
+    } else {
         checkboxes.forEach(function(checkbox){
             checkbox.checked = false;
         });
     }
+    // bagaimana cara console.log?
+    console.log(checkboxes)
 }
 
 

@@ -1,30 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Check All Checkboxes</title>
-    <!--Google Font-->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-    <!--Stylesheet-->
-    <link rel="stylesheet" href="css/dashboard.css">
-</head>
-<body>
-    <div class="container">
-        <input type="checkbox" id="option-all" onchange="checkAll(this)">
-        <label for="option-all">Select All</label>
-        <br>
 
-        <input type="checkbox" id="option-a">
-        <label for="option-a">Option A</label>
-        <br>
-        <input type="checkbox" id="option-b">
-        <label for="option-b">Option B</label>
-        <br>
-        <input type="checkbox" id="option-c">
-        <label for="option-c">Option C</label>
-        
-        <br>
-    </div>
-    <!--Script-->
-    <script src="js/dashboard.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Checkbox Multiple Check/ Uncheck</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(function () {
+
+            // Header Master Checkbox Event
+            $("#masterCheck").on("click", function () {
+                if ($("input:checkbox").prop("checked")) {
+                    $("input:checkbox[name='row-check']").prop("checked", true);
+                } else {
+                    $("input:checkbox[name='row-check']").prop("checked", false);
+                }
+            });
+
+            // Check event on each table row checkbox
+            $("input:checkbox[name='row-check']").on("change", function () {
+                var total_check_boxes = $("input:checkbox[name='row-check']").length;
+                var total_checked_boxes = $("input:checkbox[name='row-check']:checked").length;
+
+                // If all checked manually then check master checkbox
+                if (total_check_boxes === total_checked_boxes) {
+                    $("#masterCheck").prop("checked", true);
+                }
+                else {
+                    $("#masterCheck").prop("checked", false);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body class="container">
+
+    <h4>Multiple Check/ Uncheck</h4>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">
+                    <input class="form-check-input" type="checkbox" id="masterCheck" value="checkUncheckAll">
+                    <label class="form-check-label" for="masterCheck">Select/ Deselect All</label>
+                </th>
+                <th scope="col">Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- harus buat loop disini -->
+            <tr>
+                <td>
+                    <input class="form-check-input" type="checkbox" id="row1" name="row-check" value="Lavina Cassin">
+                    <label class="form-check-label" for="row1">Lavina Cassin</label>
+                </td>
+                <td>1659 Melyssa Cove</td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="form-check-input" type="checkbox" id="row2" name="row-check"
+                        value="Herminio Schimmel">
+                    <label class="form-check-label" for="row2">Herminio Schimmel</label>
+                </td>
+                <td>9562 Fleta Dam</td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="form-check-input" type="checkbox" id="row3" name="row-check" value="Anika Little">
+                    <label class="form-check-label" for="row3">Anika Little</label>
+                </td>
+                <td>49964 Halvorson Hollow</td>
+            </tr>
+        </tbody>
+    </table>
+
+
 </body>
+
 </html>
