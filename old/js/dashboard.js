@@ -27,16 +27,15 @@ $(function () {
         },
     ];
 
-    let row = '';
- // <input class="form-check-input" type="checkbox" id="row1" name="row-check" value="Lavina Cassin">
- //                    <label class="form-check-label" for="row1">Kue</label>
+// todo: bagaimana membuat response yang tepat untuk browser?
 
+    let row = '';
+ 
     $.each(products, function(j, e) {
         row +='<tr> <td>';
         row +='<input class="form-check-input" type="checkbox" id="'+e.id+'" name="row-check" value="'+e.id+'"/> <label class="form-check-label" for="'+e.id+'"> '+e.name+' </label> </td>';
         row +='<td>'+e.price+'</td><td>'+e.stock+'</td></tr>';
 
-        console.log(e.name);
     });
 
     $('#item-table tbody').append(row);
