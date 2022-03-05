@@ -1,5 +1,9 @@
 ci-cd.md
 
+# CI/CD pada github pages
+CI/CD depend on where we want to deployment?
+ini akan berkaitan dengan Token yang akan kita gunakan.
+
 https://medium.com/front-end-weekly/ci-cd-with-github-actions-to-deploy-on-github-pages-73e225f8f131
 
 
@@ -36,6 +40,7 @@ At the root of your repository, create a directory named .github/workflows to st
 In .github/workflows, add a .yml file for your workflow. For example, .github/workflows/continuous-integration-workflow.yml .
 Use the reference documentation to choose events to trigger an action, add actions and customize your workflow.
 Commit your changes in the workflow file to the branch where you want your workflow to run.
+
 Before getting started, you need to add your personal access token to the environment.
 A personal access token is required to authenticate to GitHub in the following situations:
 When you’re using two-factor authentication
