@@ -41,22 +41,40 @@ In .github/workflows, add a .yml file for your workflow. For example, .github/wo
 Use the reference documentation to choose events to trigger an action, add actions and customize your workflow.
 Commit your changes in the workflow file to the branch where you want your workflow to run.
 
+# ini tentang Personal-Access-Token
 Before getting started, you need to add your personal access token to the environment.
 A personal access token is required to authenticate to GitHub in the following situations:
+
 When you’re using two-factor authentication
 To access protected content in an organization that uses SAML single sign-on (SSO)
 
-name
+
+
+
+# atribute pada file .yml
+## name 
 Name is the name of the workflow. GitHub displays the names of your workflows on your repository’s actions page.
-name: CI and CD
-on
+`name: CI and CD`
+
+## on
 On key, this tells the Github action system when to build the workflow. 0n key triggers the workflow. You can provide single event, array of events, array of event types.
 
-jobs
+## jobs
 Each work flow consists of one or more jobs. Jobs run parallel by default. It tells workflow what job we want it to do.
 
 Note: crazy-max/ghaction-github-pages is a custom Github action created by Crazy Max to deploy to Github pages. You can publish your own page as well.
-runs-on
+
+## runs-on
 Each job runs in an environment specified by runs-on. Github actions can actually run on Windows, Mac, Ubuntu.
-runs-on: ubuntu-latest 
+`runs-on: ubuntu-latest `
+
+## env
+pada steps terdapat env yang digunakan dalam deployment.
+dalam hal ini env pada github token kita.
+
+
+# akhir kata
 Github provides a great environment to be more productive by doing all the production, integration and deployment related tasks in the same platform, thus saves a lot time.
+
+
+
